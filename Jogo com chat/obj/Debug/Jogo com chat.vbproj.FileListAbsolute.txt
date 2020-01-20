@@ -1,0 +1,11 @@
+c:\users\tenata\documents\visual studio 2013\Projects\Jogo com chat\Jogo com chat\bin\Debug\Jogo com chat.exe.config
+c:\users\tenata\documents\visual studio 2013\Projects\Jogo com chat\Jogo com chat\obj\Debug\Jogo_com_chat.Form1.resources
+c:\users\tenata\documents\visual studio 2013\Projects\Jogo com chat\Jogo com chat\obj\Debug\Jogo_com_chat.Resources.resources
+c:\users\tenata\documents\visual studio 2013\Projects\Jogo com chat\Jogo com chat\obj\Debug\Jogo com chat.vbproj.GenerateResource.Cache
+c:\users\tenata\documents\visual studio 2013\Projects\Jogo com chat\Jogo com chat\bin\Debug\Jogo com chat.exe
+c:\users\tenata\documents\visual studio 2013\Projects\Jogo com chat\Jogo com chat\bin\Debug\Jogo com chat.pdb
+c:\users\tenata\documents\visual studio 2013\Projects\Jogo com chat\Jogo com chat\bin\Debug\Jogo com chat.xml
+c:\users\tenata\documents\visual studio 2013\Projects\Jogo com chat\Jogo com chat\obj\Debug\Jogo_com_chat.Chat.resources
+c:\users\tenata\documents\visual studio 2013\Projects\Jogo com chat\Jogo com chat\obj\Debug\Jogo com chat.exe
+c:\users\tenata\documents\visual studio 2013\Projects\Jogo com chat\Jogo com chat\obj\Debug\Jogo com chat.xml
+c:\users\tenata\documents\visual studio 2013\Projects\Jogo com chat\Jogo com chat\obj\Debug\Jogo com chat.pdb
