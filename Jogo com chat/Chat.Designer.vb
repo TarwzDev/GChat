@@ -28,7 +28,9 @@ Partial Class Chat
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
@@ -40,21 +42,30 @@ Partial Class Chat
         Me.Button5 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.Label2 = New System.Windows.Forms.Label()
+        Me.Timer3 = New System.Windows.Forms.Timer(Me.components)
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
-        Me.Button8 = New System.Windows.Forms.Button()
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.Timer4 = New System.Windows.Forms.Timer(Me.components)
+        Me.Button8 = New System.Windows.Forms.Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Button13 = New System.Windows.Forms.Button()
+        Me.Button11 = New System.Windows.Forms.Button()
+        Me.Button10 = New System.Windows.Forms.Button()
+        Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
+        Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel1.SuspendLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
         Me.SuspendLayout()
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(3, 4)
+        Me.TextBox1.Location = New System.Drawing.Point(3, 5)
         Me.TextBox1.Multiline = True
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.ReadOnly = True
@@ -69,9 +80,9 @@ Partial Class Chat
         Me.TextBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox2.Location = New System.Drawing.Point(3, 67)
+        Me.TextBox2.Location = New System.Drawing.Point(59, 67)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(630, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(574, 20)
         Me.TextBox2.TabIndex = 1
         '
         'Button1
@@ -92,15 +103,27 @@ Partial Class Chat
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.Button9)
         Me.Panel1.Controls.Add(Me.Button2)
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.TextBox2)
         Me.Panel1.Location = New System.Drawing.Point(12, 367)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(668, 100)
+        Me.Panel1.Size = New System.Drawing.Size(668, 112)
         Me.Panel1.TabIndex = 3
         Me.Panel1.Visible = False
+        '
+        'Button9
+        '
+        Me.Button9.BackColor = System.Drawing.Color.Transparent
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.Location = New System.Drawing.Point(3, 65)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(50, 23)
+        Me.Button9.TabIndex = 5
+        Me.Button9.Text = "mudar imagem"
+        Me.Button9.UseVisualStyleBackColor = False
         '
         'Button2
         '
@@ -111,6 +134,15 @@ Partial Class Chat
         Me.Button2.TabIndex = 3
         Me.Button2.Text = "X"
         Me.Button2.UseVisualStyleBackColor = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.BackColor = System.Drawing.Color.White
+        Me.PictureBox2.Location = New System.Drawing.Point(-6, -37)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(693, 549)
+        Me.PictureBox2.TabIndex = 10
+        Me.PictureBox2.TabStop = False
         '
         'Button3
         '
@@ -127,7 +159,7 @@ Partial Class Chat
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Label1.Location = New System.Drawing.Point(339, 99)
+        Me.Label1.Location = New System.Drawing.Point(314, 76)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(19, 13)
         Me.Label1.TabIndex = 5
@@ -135,9 +167,9 @@ Partial Class Chat
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(1, 12)
+        Me.PictureBox1.Location = New System.Drawing.Point(-6, -7)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(686, 452)
+        Me.PictureBox1.Size = New System.Drawing.Size(693, 483)
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 6
         Me.PictureBox1.TabStop = False
@@ -159,7 +191,7 @@ Partial Class Chat
         Me.Panel2.Controls.Add(Me.Button7)
         Me.Panel2.Controls.Add(Me.Button6)
         Me.Panel2.Controls.Add(Me.Button5)
-        Me.Panel2.Location = New System.Drawing.Point(252, 139)
+        Me.Panel2.Location = New System.Drawing.Point(251, 115)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(200, 141)
         Me.Panel2.TabIndex = 8
@@ -172,7 +204,7 @@ Partial Class Chat
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(17, 16)
         Me.Button7.TabIndex = 4
-        Me.Button7.Text = "Button7"
+        Me.Button7.Text = "X"
         Me.Button7.UseVisualStyleBackColor = False
         '
         'Button6
@@ -203,64 +235,135 @@ Partial Class Chat
         '
         'Timer2
         '
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.BackColor = System.Drawing.Color.White
-        Me.PictureBox2.Location = New System.Drawing.Point(1, -4)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(695, 483)
-        Me.PictureBox2.TabIndex = 9
-        Me.PictureBox2.TabStop = False
+        Me.Timer2.Enabled = True
+        Me.Timer2.Interval = 1
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(315, 322)
+        Me.Label2.BackColor = System.Drawing.Color.Lime
+        Me.Label2.Location = New System.Drawing.Point(339, 76)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(64, 13)
-        Me.Label2.TabIndex = 10
-        Me.Label2.Text = "conectando"
+        Me.Label2.Size = New System.Drawing.Size(19, 13)
+        Me.Label2.TabIndex = 9
+        Me.Label2.Text = "00"
+        '
+        'Timer3
+        '
+        Me.Timer3.Enabled = True
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(347, 350)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(62, 13)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "Carregando"
         '
         'ProgressBar1
         '
-        Me.ProgressBar1.Location = New System.Drawing.Point(153, 309)
+        Me.ProgressBar1.Location = New System.Drawing.Point(76, 336)
         Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(393, 10)
+        Me.ProgressBar1.Size = New System.Drawing.Size(568, 11)
         Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
-        Me.ProgressBar1.TabIndex = 11
-        '
-        'Button8
-        '
-        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button8.Location = New System.Drawing.Point(612, 12)
-        Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(75, 23)
-        Me.Button8.TabIndex = 12
-        Me.Button8.Text = "Cancelar"
-        Me.Button8.UseVisualStyleBackColor = True
+        Me.ProgressBar1.TabIndex = 12
         '
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.Jogo_com_chat.My.Resources.Resources._443e76a793cd3ad46eefc326a1942ec0_w200
-        Me.PictureBox3.Location = New System.Drawing.Point(212, 68)
+        Me.PictureBox3.Location = New System.Drawing.Point(264, 46)
         Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(276, 235)
+        Me.PictureBox3.Size = New System.Drawing.Size(218, 258)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox3.TabIndex = 13
         Me.PictureBox3.TabStop = False
+        '
+        'Timer4
+        '
+        Me.Timer4.Enabled = True
+        Me.Timer4.Interval = 1
+        '
+        'Button8
+        '
+        Me.Button8.BackColor = System.Drawing.Color.White
+        Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button8.ForeColor = System.Drawing.Color.Black
+        Me.Button8.Location = New System.Drawing.Point(605, 12)
+        Me.Button8.Name = "Button8"
+        Me.Button8.Size = New System.Drawing.Size(75, 23)
+        Me.Button8.TabIndex = 14
+        Me.Button8.Text = "Sair"
+        Me.Button8.UseVisualStyleBackColor = False
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Button13)
+        Me.Panel3.Controls.Add(Me.Button11)
+        Me.Panel3.Controls.Add(Me.Button10)
+        Me.Panel3.Location = New System.Drawing.Point(15, 201)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(136, 120)
+        Me.Panel3.TabIndex = 15
+        Me.Panel3.Visible = False
+        '
+        'Button13
+        '
+        Me.Button13.BackColor = System.Drawing.Color.Red
+        Me.Button13.Location = New System.Drawing.Point(116, 3)
+        Me.Button13.Name = "Button13"
+        Me.Button13.Size = New System.Drawing.Size(17, 16)
+        Me.Button13.TabIndex = 5
+        Me.Button13.Text = "X"
+        Me.Button13.UseVisualStyleBackColor = False
+        '
+        'Button11
+        '
+        Me.Button11.BackColor = System.Drawing.Color.Transparent
+        Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button11.Location = New System.Drawing.Point(14, 43)
+        Me.Button11.Name = "Button11"
+        Me.Button11.Size = New System.Drawing.Size(96, 23)
+        Me.Button11.TabIndex = 6
+        Me.Button11.Text = "Emojis ^^"
+        Me.Button11.UseVisualStyleBackColor = False
+        '
+        'Button10
+        '
+        Me.Button10.BackColor = System.Drawing.Color.Transparent
+        Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button10.Location = New System.Drawing.Point(14, 13)
+        Me.Button10.Name = "Button10"
+        Me.Button10.Size = New System.Drawing.Size(96, 24)
+        Me.Button10.TabIndex = 5
+        Me.Button10.Text = "Player"
+        Me.Button10.UseVisualStyleBackColor = False
+        '
+        'Timer5
+        '
+        Me.Timer5.Enabled = True
+        Me.Timer5.Interval = 1
+        '
+        'Timer6
+        '
+        Me.Timer6.Enabled = True
+        Me.Timer6.Interval = 1
         '
         'Chat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(692, 469)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(687, 467)
         Me.ControlBox = False
-        Me.Controls.Add(Me.PictureBox3)
-        Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.ProgressBar1)
-        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.PictureBox3)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.PictureBox2)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Button4)
@@ -272,10 +375,11 @@ Partial Class Chat
         Me.Text = "Chat"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel3.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -297,9 +401,19 @@ Partial Class Chat
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents Button7 As System.Windows.Forms.Button
     Friend WithEvents Timer2 As System.Windows.Forms.Timer
-    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Timer3 As System.Windows.Forms.Timer
+    Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
-    Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents PictureBox3 As System.Windows.Forms.PictureBox
+    Friend WithEvents Timer4 As System.Windows.Forms.Timer
+    Friend WithEvents Button8 As System.Windows.Forms.Button
+    Friend WithEvents Button9 As System.Windows.Forms.Button
+    Friend WithEvents Panel3 As System.Windows.Forms.Panel
+    Friend WithEvents Button10 As System.Windows.Forms.Button
+    Friend WithEvents Button13 As System.Windows.Forms.Button
+    Friend WithEvents Button11 As System.Windows.Forms.Button
+    Friend WithEvents Timer5 As System.Windows.Forms.Timer
+    Friend WithEvents Timer6 As System.Windows.Forms.Timer
 End Class
