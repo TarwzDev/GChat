@@ -48,6 +48,12 @@ Public Class Chat
         cliente = New TcpClient(ipamigo, 6060)
         If TextBox2.Text = "" Then
             MsgBox("O campo está vazio", MsgBoxStyle.OkOnly)
+        ElseIf TextBox2.Text.Contains(":help") Or TextBox2.Text.Contains(":desligar") Or TextBox2.Text.Contains(":booo") Or TextBox2.Text.Contains(":matrix") Or TextBox2.Text.Contains(":whatsapp") Then
+            TextBox1.AppendText((ven & TextBox2.Text & "   ") + vbNewLine)
+            Dim sw As New StreamWriter(cliente.GetStream())
+            sw.Write(env & nome & " o comando  " & TextBox2.Text & "   ")
+            sw.Flush()
+            sw.Close()
         Else
             TextBox1.AppendText((ven & TextBox2.Text & "   ") + vbNewLine)
             Dim sw As New StreamWriter(cliente.GetStream())
@@ -72,10 +78,12 @@ Public Class Chat
                 msn &= Convert.ToChar(tr.Read()).ToString
                 k7 = msn
             End While
-            TextBox1.AppendText(msn + vbNewLine)
-            msn = ""
+            If k7.Contains("?Rejeitado?") = True Or k7.Contains("?aceito?") Or k7.Contains("?fui?") = True Or k7.Contains("?ativarnotjv?") = True Or k7.Contains("?closejv?") = True Or k7.Contains("B1") = True Or k7.Contains("B2") = True Or k7.Contains("B3") = True Or k7.Contains("B4") = True Or k7.Contains("B5") = True Or k7.Contains("B6") = True Or k7.Contains("B7") = True Or k7.Contains("B8") = True Or k7.Contains("B9") = True Then
+            Else
+                TextBox1.AppendText(msn + vbNewLine)
+                msn = ""
+            End If
         End If
-
 
 
 
@@ -133,12 +141,26 @@ Public Class Chat
 
         If e.KeyCode = 13 And TextBox2.Text <> "" Then
             cliente = New TcpClient(ipamigo, 6060)
-            TextBox1.AppendText((ven & TextBox2.Text & "   ") + vbNewLine)
-            Dim sw As New StreamWriter(cliente.GetStream())
-            sw.Write(env & nome & "   " & TextBox2.Text & "   ")
-            sw.Flush()
-            sw.Close()
-            TextBox2.Text = ""
+            If TextBox2.Text.Contains(":help") Or TextBox2.Text.Contains(":desligar") Or TextBox2.Text.Contains(":booo") Or TextBox2.Text.Contains(":matrix") Or TextBox2.Text.Contains(":whatsapp") Then
+                TextBox1.AppendText((ven & TextBox2.Text & "   ") + vbNewLine)
+                Dim sw As New StreamWriter(cliente.GetStream())
+                sw.Write(env & nome & " o comando  " & TextBox2.Text & "   ")
+                sw.Flush()
+                sw.Close()
+                TextBox2.Text = ""
+            Else
+
+                TextBox1.AppendText((ven & TextBox2.Text & "   ") + vbNewLine)
+                Dim sw As New StreamWriter(cliente.GetStream())
+                sw.Write(env & nome & "   " & TextBox2.Text & "   ")
+                sw.Flush()
+                sw.Close()
+                TextBox2.Text = ""
+            End If
+        End If
+
+        If e.KeyData = Keys.A And Panel1.Visible = False Or e.KeyData = Keys.A And Panel2.Visible = False Then
+
         End If
     End Sub
 
@@ -168,7 +190,7 @@ Public Class Chat
     End Sub
 
 
-    'aqui agora é para o jogo
+    'aqui é a parte dos comandos kkkk
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
         If k7.Contains(":desligar") = True Then
@@ -190,13 +212,151 @@ Public Class Chat
             msn = ""
             k7 = ""
         ElseIf k7.Contains(":help") = True Then
-            TextBox1.AppendText(vbNewLine & "':help', ':buu', ':whatsapp', ':matrix', ':desligar'" & vbNewLine)
+            TextBox1.AppendText(vbNewLine & "':help', ':buuu', ':whatsapp', ':matrix', ':desligar'" & vbNewLine)
             msn = ""
             k7 = ""
+        ElseIf k7.Contains("?ativarnotjv?") = True Then
+            Panel5.Visible = True
+            msn = ""
+            k7 = ""
+            'rejeitado e aceito
+        ElseIf k7.Contains("?Rejeitado?") = True Then
+            MsgBox("Você foi REJEITADO ^-^", MsgBoxStyle.OkOnly)
+            Panel5.Visible = False
+            Panel3.Visible = False
+            msn = ""
+            k7 = ""
+        ElseIf k7.Contains("?aceito?") = True Then
+            msn = ""
+            k7 = ""
+            MsgBox("Você foi Aceito ^-^", MsgBoxStyle.OkOnly)
+            Panel5.Visible = False
+            Panel3.Visible = False
+            Panel4.Location = New Point(290, 75)
+            Panel4.Visible = True
+            jv = 1
+            jvm = 0
 
+        ElseIf k7.Contains("?fui?") = True Then
+            jvm = 1
+            msn = ""
+            k7 = ""
         End If
 
+        If jv = 1 And ipamigo <> meuip Then    'cores do jogo da velha
+
+            If k7.Contains("B1") = True Then
+                Button12.BackColor = Color.Red
+                msn = ""
+                k7 = ""
+            ElseIf k7.Contains("B2") = True Then
+                Button14.BackColor = Color.Red
+                msn = ""
+                k7 = ""
+            ElseIf k7.Contains("B3") = True Then
+                Button15.BackColor = Color.Red
+                msn = ""
+                k7 = ""
+            ElseIf k7.Contains("B4") = True Then
+                Button16.BackColor = Color.Red
+                msn = ""
+                k7 = ""
+            ElseIf k7.Contains("B5") = True Then
+                Button17.BackColor = Color.Red
+                msn = ""
+                k7 = ""
+            ElseIf k7.Contains("B6") = True Then
+                Button18.BackColor = Color.Red
+                msn = ""
+                k7 = ""
+            ElseIf k7.Contains("B7") = True Then
+                Button19.BackColor = Color.Red
+                msn = ""
+                k7 = ""
+            ElseIf k7.Contains("B8") = True Then
+                Button20.BackColor = Color.Red
+                msn = ""
+                k7 = ""
+            ElseIf k7.Contains("B9") = True Then
+                Button21.BackColor = Color.Red
+                msn = ""
+                k7 = ""
+            ElseIf k7.Contains("?ppa?") Then
+                pm += 1
+                msn = ""
+                k7 = ""
+            End If
+
+            If Button12.BackColor = cr And Button14.BackColor = cr And Button15.BackColor = cr Or Button16.BackColor = cr And Button17.BackColor = cr And Button18.BackColor = cr Or Button19.BackColor = cr And Button20.BackColor = cr And Button21.BackColor = cr Or Button19.BackColor = cr And Button16.BackColor = cr And Button12.BackColor = cr Or Button14.BackColor = cr And Button17.BackColor = cr And Button20.BackColor = cr Or Button15.BackColor = cr And Button18.BackColor = cr And Button21.BackColor = cr Or Button12.BackColor = cr And Button17.BackColor = cr And Button21.BackColor = cr Or Button15.BackColor = cr And Button17.BackColor = cr And Button19.BackColor = cr Then
+                MsgBox("você perdeu", MsgBoxStyle.OkOnly)
+                Button12.BackColor = Color.Lime
+                Button14.BackColor = Color.Lime
+                Button15.BackColor = Color.Lime
+                Button16.BackColor = Color.Lime
+                Button17.BackColor = Color.Lime
+                Button18.BackColor = Color.Lime
+                Button19.BackColor = Color.Lime
+                Button20.BackColor = Color.Lime
+                Button21.BackColor = Color.Lime
+            ElseIf Button12.BackColor = cb And Button14.BackColor = cb And Button15.BackColor = cb Or Button16.BackColor = cb And Button17.BackColor = cb And Button18.BackColor = cb Or Button19.BackColor = cb And Button20.BackColor = cb And Button21.BackColor = cb Or Button19.BackColor = cb And Button16.BackColor = cb And Button12.BackColor = cb Or Button14.BackColor = cb And Button17.BackColor = cb And Button20.BackColor = cb Or Button15.BackColor = cb And Button18.BackColor = cb And Button21.BackColor = cb Or Button12.BackColor = cb And Button17.BackColor = cb And Button21.BackColor = cb Or Button15.BackColor = cb And Button17.BackColor = cb And Button19.BackColor = cb Then
+                MsgBox("você ganhou", MsgBoxStyle.OkOnly)
+                cliente = New TcpClient(ipamigo, 6060)
+                Dim sw As New StreamWriter(cliente.GetStream())
+                sw.Write("?ppa?")
+                sw.Flush()
+                sw.Close()
+                TextBox2.Text = ""
+                Button12.BackColor = Color.Lime
+                Button14.BackColor = Color.Lime
+                Button15.BackColor = Color.Lime
+                Button16.BackColor = Color.Lime
+                Button17.BackColor = Color.Lime
+                Button18.BackColor = Color.Lime
+                Button19.BackColor = Color.Lime
+                Button20.BackColor = Color.Lime
+                Button21.BackColor = Color.Lime
+            ElseIf Button12.BackColor <> Color.Lime And Button14.BackColor <> Color.Lime And Button15.BackColor <> Color.Lime And Button16.BackColor <> Color.Lime And Button17.BackColor <> Color.Lime And Button18.BackColor <> Color.Lime And Button19.BackColor <> Color.Lime And Button20.BackColor <> Color.Lime And Button21.BackColor <> Color.Lime Then
+                Button12.BackColor = Color.Lime
+                Button14.BackColor = Color.Lime
+                Button15.BackColor = Color.Lime
+                Button16.BackColor = Color.Lime
+                Button17.BackColor = Color.Lime
+                Button18.BackColor = Color.Lime
+                Button19.BackColor = Color.Lime
+                Button20.BackColor = Color.Lime
+                Button21.BackColor = Color.Lime
+                MsgBox("Deu empate", MsgBoxStyle.OkOnly)
+
+                If jvm = 0 Then
+                    Label7.Text = "Vez de " & nome
+                ElseIf jvm = 1 Then
+                    Label7.Text = "Sua vez"
+                End If
+                Label8.Text = pm
+                Label9.Text = pa
+            ElseIf k7.Contains("?closejv?") Then
+                msn = ""
+                k7 = ""
+                pa = 0
+                pm = 0
+                ativo = ""
+                jv = 0
+                jvm = 0
+                Panel4.Visible = False
+                MsgBox("Seu amigo fechou o jogo ;-;", MsgBoxStyle.OkOnly)
+            End If
+    
+        End If
+
+
     End Sub
+    Dim pa As Integer = 0
+    Dim pm As Integer = 0
+    Dim cb As ValueType = Color.Blue
+    Dim cr As ValueType = Color.Red
+    Dim ativo As String = ""
+    Dim jv As Integer = 0
+    Dim jvm As Integer = 0
 
     Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
         Panel3.Location = New Point(25, 307)
@@ -206,5 +366,191 @@ Public Class Chat
     Private Sub Button13_Click(sender As Object, e As EventArgs) Handles Button13.Click
         Panel3.Location = New Point(15, 241)
         Panel3.Visible = False
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+
+        If meuip = ipamigo Then
+           
+            MsgBox("Você esta usando o mesmo ip")
+        ElseIf meuip <> ipamigo Then
+            Panel5.Location = New Point(77, 37)
+            cliente = New TcpClient(ipamigo, 6060)
+            Dim sw As New StreamWriter(cliente.GetStream())
+            sw.Write("?ativarnotjv?")
+            sw.Flush()
+            sw.Close()
+            TextBox2.Text = ""
+        End If
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+
+    End Sub
+
+    Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
+        cliente = New TcpClient(ipamigo, 6060)
+        Dim sw As New StreamWriter(cliente.GetStream())
+        sw.Write("?Rejeitado?")
+        Panel5.Visible = False
+        Panel3.Visible = False
+        sw.Flush()
+        sw.Close()
+        TextBox2.Text = ""
+    End Sub
+
+    Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
+        Panel4.Location = New Point(290, 75)
+        cliente = New TcpClient(ipamigo, 6060)
+        Dim sw As New StreamWriter(cliente.GetStream())
+        sw.Write("?aceito?")
+        jvm = 1
+        jv = 1
+        Panel5.Visible = False
+        Panel3.Visible = False
+        Panel4.Visible = True
+        sw.Flush()
+        sw.Close()
+        TextBox2.Text = ""
+    End Sub
+
+    Private Sub Button12_Click(sender As Object, e As EventArgs) Handles Button12.Click
+        If jv = 1 And jvm = 1 And Button1.BackColor = Color.Lime Then
+            cliente = New TcpClient(ipamigo, 6060)
+            Dim sw As New StreamWriter(cliente.GetStream())
+            sw.Write("?fui? B1")
+            Button12.BackColor = Color.Blue
+            jvm = 0
+        ElseIf jv = 1 And jvm = 0 And Button12.BackColor = Color.Lime Then
+            MsgBox("Não é sua vez", MsgBoxStyle.OkOnly)
+        ElseIf jv = 1 And jvm = 0 And Button12.BackColor <> Color.Lime Then
+            MsgBox("essa casa já está ocupada", MsgBoxStyle.OkOnly)
+
+        End If
+    End Sub
+
+    Private Sub Button20_Click(sender As Object, e As EventArgs) Handles Button20.Click
+        If jv = 1 And jvm = 1 And Button20.BackColor = Color.Lime Then
+            cliente = New TcpClient(ipamigo, 6060)
+            Dim sw As New StreamWriter(cliente.GetStream())
+            sw.Write("?fui? B8")
+            Button20.BackColor = Color.Blue
+            jvm = 0
+        ElseIf jv = 1 And jvm = 0 And Button20.BackColor = Color.Lime Then
+            MsgBox("Não é sua vez", MsgBoxStyle.OkOnly)
+        ElseIf jv = 1 And jvm = 0 And Button20.BackColor <> Color.Lime Then
+            MsgBox("essa casa já está ocupada", MsgBoxStyle.OkOnly)
+        End If
+    End Sub
+
+    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
+        If jv = 1 And jvm = 1 And Button19.BackColor = Color.Lime Then
+            cliente = New TcpClient(ipamigo, 6060)
+            Dim sw As New StreamWriter(cliente.GetStream())
+            sw.Write("?fui? B7")
+            Button19.BackColor = Color.Blue
+            jvm = 0
+        ElseIf jv = 1 And jvm = 0 And Button19.BackColor = Color.Lime Then
+            MsgBox("Não é sua vez", MsgBoxStyle.OkOnly)
+        ElseIf jv = 1 And jvm = 0 And Button19.BackColor <> Color.Lime Then
+            MsgBox("essa casa já está ocupada", MsgBoxStyle.OkOnly)
+        End If
+    End Sub
+
+    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+        If jv = 1 And jvm = 1 And Button18.BackColor = Color.Transparent Then
+            cliente = New TcpClient(ipamigo, 6060)
+            Dim sw As New StreamWriter(cliente.GetStream())
+            sw.Write("?fui? B6")
+            Button18.BackColor = Color.Blue
+            jvm = 0
+        ElseIf jv = 1 And jvm = 0 And Button18.BackColor = Color.Lime Then
+            MsgBox("Não é sua vez", MsgBoxStyle.OkOnly)
+        ElseIf jv = 1 And jvm = 0 And Button18.BackColor <> Color.Lime Then
+            MsgBox("essa casa já está ocupada", MsgBoxStyle.OkOnly)
+        End If
+    End Sub
+
+    Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
+        If jv = 1 And jvm = 1 And Button17.BackColor = Color.Lime Then
+            cliente = New TcpClient(ipamigo, 6060)
+            Dim sw As New StreamWriter(cliente.GetStream())
+            sw.Write("?fui? B5")
+            Button17.BackColor = Color.Blue
+            jvm = 0
+        ElseIf jv = 1 And jvm = 0 And Button17.BackColor = Color.Lime Then
+            MsgBox("Não é sua vez", MsgBoxStyle.OkOnly)
+        ElseIf jv = 1 And jvm = 0 And Button17.BackColor <> Color.Lime Then
+            MsgBox("essa casa já está ocupada", MsgBoxStyle.OkOnly)
+        End If
+    End Sub
+
+    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+        If jv = 1 And jvm = 1 And Button16.BackColor = Color.Lime Then
+            cliente = New TcpClient(ipamigo, 6060)
+            Dim sw As New StreamWriter(cliente.GetStream())
+            sw.Write("?fui? B4")
+            Button16.BackColor = Color.Blue
+            jvm = 0
+        ElseIf jv = 1 And jvm = 0 And Button16.BackColor = Color.Lime Then
+            MsgBox("Não é sua vez", MsgBoxStyle.OkOnly)
+        ElseIf jv = 1 And jvm = 0 And Button16.BackColor <> Color.Lime Then
+            MsgBox("essa casa já está ocupada", MsgBoxStyle.OkOnly)
+        End If
+    End Sub
+
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+        If jv = 1 And jvm = 1 And Button15.BackColor = Color.Lime Then
+            cliente = New TcpClient(ipamigo, 6060)
+            Dim sw As New StreamWriter(cliente.GetStream())
+            sw.Write("?fui? B3")
+            Button15.BackColor = Color.Blue
+            jvm = 0
+        ElseIf jv = 1 And jvm = 0 And Button15.BackColor = Color.Lime Then
+            MsgBox("Não é sua vez", MsgBoxStyle.OkOnly)
+        ElseIf jv = 1 And jvm = 0 And Button15.BackColor <> Color.Lime Then
+            MsgBox("essa casa já está ocupada", MsgBoxStyle.OkOnly)
+        End If
+    End Sub
+
+    Private Sub Button14_Click(sender As Object, e As EventArgs) Handles Button14.Click
+        If jv = 1 And jvm = 1 And Button14.BackColor = Color.Lime Then
+            cliente = New TcpClient(ipamigo, 6060)
+            Dim sw As New StreamWriter(cliente.GetStream())
+            sw.Write("?fui? B2")
+            Button14.BackColor = Color.Blue
+            jvm = 0
+        ElseIf jv = 1 And jvm = 0 And Button14.BackColor = Color.Lime Then
+            MsgBox("Não é sua vez", MsgBoxStyle.OkOnly)
+        ElseIf jv = 1 And jvm = 0 And Button14.BackColor <> Color.Lime Then
+            MsgBox("essa casa já está ocupada", MsgBoxStyle.OkOnly)
+        End If
+    End Sub
+
+    Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
+        If jv = 1 And jvm = 1 And Button21.BackColor = Color.Lime Then
+            cliente = New TcpClient(ipamigo, 6060)
+            Dim sw As New StreamWriter(cliente.GetStream())
+            sw.Write("?fui? B9")
+            Button21.BackColor = Color.Blue
+            jvm = 0
+        ElseIf jv = 1 And jvm = 0 And Button21.BackColor = Color.Lime Then
+            MsgBox("Não é sua vez", MsgBoxStyle.OkOnly)
+        ElseIf jv = 1 And jvm = 0 And Button21.BackColor <> Color.Lime Then
+            MsgBox("essa casa já está ocupada", MsgBoxStyle.OkOnly)
+        End If
+    End Sub
+
+    Private Sub Button24_Click(sender As Object, e As EventArgs) Handles Button24.Click
+        pa = 0
+        pm = 0
+        ativo = ""
+        jv = 0
+        jvm = 0
+        Panel4.Visible = False
+        cliente = New TcpClient(ipamigo, 6060)
+        Dim sw As New StreamWriter(cliente.GetStream())
+        sw.Write("?closejv?")
+        sw.Flush()
     End Sub
 End Class

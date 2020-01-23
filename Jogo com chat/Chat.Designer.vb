@@ -55,12 +55,37 @@ Partial Class Chat
         Me.Button10 = New System.Windows.Forms.Button()
         Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button21 = New System.Windows.Forms.Button()
+        Me.Button20 = New System.Windows.Forms.Button()
+        Me.Button19 = New System.Windows.Forms.Button()
+        Me.Button18 = New System.Windows.Forms.Button()
+        Me.Button17 = New System.Windows.Forms.Button()
+        Me.Button16 = New System.Windows.Forms.Button()
+        Me.Button15 = New System.Windows.Forms.Button()
+        Me.Button14 = New System.Windows.Forms.Button()
+        Me.Button12 = New System.Windows.Forms.Button()
+        Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.Button23 = New System.Windows.Forms.Button()
+        Me.Button22 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Button24 = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -337,7 +362,7 @@ Partial Class Chat
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(96, 24)
         Me.Button10.TabIndex = 5
-        Me.Button10.Text = "Player"
+        Me.Button10.Text = "Jogo da velha"
         Me.Button10.UseVisualStyleBackColor = False
         '
         'Timer5
@@ -350,6 +375,236 @@ Partial Class Chat
         Me.Timer6.Enabled = True
         Me.Timer6.Interval = 1
         '
+        'Panel4
+        '
+        Me.Panel4.Controls.Add(Me.Label12)
+        Me.Panel4.Controls.Add(Me.Label11)
+        Me.Panel4.Controls.Add(Me.Label10)
+        Me.Panel4.Controls.Add(Me.Label9)
+        Me.Panel4.Controls.Add(Me.Label8)
+        Me.Panel4.Controls.Add(Me.Button24)
+        Me.Panel4.Controls.Add(Me.Label7)
+        Me.Panel4.Controls.Add(Me.Label6)
+        Me.Panel4.Controls.Add(Me.Label4)
+        Me.Panel4.Controls.Add(Me.Button21)
+        Me.Panel4.Controls.Add(Me.Button20)
+        Me.Panel4.Controls.Add(Me.Button19)
+        Me.Panel4.Controls.Add(Me.Button18)
+        Me.Panel4.Controls.Add(Me.Button17)
+        Me.Panel4.Controls.Add(Me.Button16)
+        Me.Panel4.Controls.Add(Me.Button15)
+        Me.Panel4.Controls.Add(Me.Button14)
+        Me.Panel4.Controls.Add(Me.Button12)
+        Me.Panel4.Location = New System.Drawing.Point(29, 12)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(171, 145)
+        Me.Panel4.TabIndex = 17
+        Me.Panel4.Visible = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(17, 5)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(77, 13)
+        Me.Label4.TabIndex = 9
+        Me.Label4.Text = "Jogo da velha "
+        '
+        'Button21
+        '
+        Me.Button21.BackColor = System.Drawing.Color.Lime
+        Me.Button21.Location = New System.Drawing.Point(73, 99)
+        Me.Button21.Name = "Button21"
+        Me.Button21.Size = New System.Drawing.Size(23, 23)
+        Me.Button21.TabIndex = 8
+        Me.Button21.UseVisualStyleBackColor = False
+        '
+        'Button20
+        '
+        Me.Button20.BackColor = System.Drawing.Color.Lime
+        Me.Button20.Location = New System.Drawing.Point(42, 99)
+        Me.Button20.Name = "Button20"
+        Me.Button20.Size = New System.Drawing.Size(23, 23)
+        Me.Button20.TabIndex = 7
+        Me.Button20.UseVisualStyleBackColor = False
+        '
+        'Button19
+        '
+        Me.Button19.BackColor = System.Drawing.Color.Lime
+        Me.Button19.Location = New System.Drawing.Point(13, 99)
+        Me.Button19.Name = "Button19"
+        Me.Button19.Size = New System.Drawing.Size(23, 23)
+        Me.Button19.TabIndex = 6
+        Me.Button19.UseVisualStyleBackColor = False
+        '
+        'Button18
+        '
+        Me.Button18.BackColor = System.Drawing.Color.Lime
+        Me.Button18.Location = New System.Drawing.Point(73, 72)
+        Me.Button18.Name = "Button18"
+        Me.Button18.Size = New System.Drawing.Size(23, 23)
+        Me.Button18.TabIndex = 5
+        Me.Button18.UseVisualStyleBackColor = False
+        '
+        'Button17
+        '
+        Me.Button17.BackColor = System.Drawing.Color.Lime
+        Me.Button17.Location = New System.Drawing.Point(42, 72)
+        Me.Button17.Name = "Button17"
+        Me.Button17.Size = New System.Drawing.Size(23, 23)
+        Me.Button17.TabIndex = 4
+        Me.Button17.UseVisualStyleBackColor = False
+        '
+        'Button16
+        '
+        Me.Button16.BackColor = System.Drawing.Color.Lime
+        Me.Button16.Location = New System.Drawing.Point(13, 72)
+        Me.Button16.Name = "Button16"
+        Me.Button16.Size = New System.Drawing.Size(23, 23)
+        Me.Button16.TabIndex = 3
+        Me.Button16.UseVisualStyleBackColor = False
+        '
+        'Button15
+        '
+        Me.Button15.BackColor = System.Drawing.Color.Lime
+        Me.Button15.Location = New System.Drawing.Point(71, 43)
+        Me.Button15.Name = "Button15"
+        Me.Button15.Size = New System.Drawing.Size(23, 23)
+        Me.Button15.TabIndex = 2
+        Me.Button15.UseVisualStyleBackColor = False
+        '
+        'Button14
+        '
+        Me.Button14.BackColor = System.Drawing.Color.Lime
+        Me.Button14.Location = New System.Drawing.Point(42, 43)
+        Me.Button14.Name = "Button14"
+        Me.Button14.Size = New System.Drawing.Size(23, 23)
+        Me.Button14.TabIndex = 1
+        Me.Button14.UseVisualStyleBackColor = False
+        '
+        'Button12
+        '
+        Me.Button12.BackColor = System.Drawing.Color.Lime
+        Me.Button12.Location = New System.Drawing.Point(13, 43)
+        Me.Button12.Name = "Button12"
+        Me.Button12.Size = New System.Drawing.Size(23, 23)
+        Me.Button12.TabIndex = 0
+        Me.Button12.UseVisualStyleBackColor = False
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.Button23)
+        Me.Panel5.Controls.Add(Me.Button22)
+        Me.Panel5.Controls.Add(Me.Label5)
+        Me.Panel5.Location = New System.Drawing.Point(500, 201)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(118, 95)
+        Me.Panel5.TabIndex = 18
+        Me.Panel5.Visible = False
+        '
+        'Button23
+        '
+        Me.Button23.BackColor = System.Drawing.Color.Transparent
+        Me.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button23.Location = New System.Drawing.Point(16, 61)
+        Me.Button23.Name = "Button23"
+        Me.Button23.Size = New System.Drawing.Size(76, 24)
+        Me.Button23.TabIndex = 8
+        Me.Button23.Text = "cancelar"
+        Me.Button23.UseVisualStyleBackColor = False
+        '
+        'Button22
+        '
+        Me.Button22.BackColor = System.Drawing.Color.Transparent
+        Me.Button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button22.Location = New System.Drawing.Point(26, 31)
+        Me.Button22.Name = "Button22"
+        Me.Button22.Size = New System.Drawing.Size(57, 24)
+        Me.Button22.TabIndex = 7
+        Me.Button22.Text = "aceitar"
+        Me.Button22.UseVisualStyleBackColor = False
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(3, 10)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(109, 13)
+        Me.Label5.TabIndex = 0
+        Me.Label5.Text = "Solicitação para jogar"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(31, 24)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(0, 13)
+        Me.Label6.TabIndex = 10
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(31, 27)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(39, 13)
+        Me.Label7.TabIndex = 11
+        Me.Label7.Text = "Label7"
+        '
+        'Button24
+        '
+        Me.Button24.BackColor = System.Drawing.Color.Red
+        Me.Button24.Location = New System.Drawing.Point(151, 3)
+        Me.Button24.Name = "Button24"
+        Me.Button24.Size = New System.Drawing.Size(17, 16)
+        Me.Button24.TabIndex = 7
+        Me.Button24.Text = "X"
+        Me.Button24.UseVisualStyleBackColor = False
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(125, 66)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(19, 13)
+        Me.Label8.TabIndex = 12
+        Me.Label8.Text = "00"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(125, 106)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(19, 13)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "00"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(105, 27)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(59, 13)
+        Me.Label10.TabIndex = 14
+        Me.Label10.Text = "Pontuação"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(119, 48)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(32, 13)
+        Me.Label11.TabIndex = 15
+        Me.Label11.Text = "Você"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(119, 86)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(36, 13)
+        Me.Label12.TabIndex = 16
+        Me.Label12.Text = "Amigo"
+        '
         'Chat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -357,6 +612,8 @@ Partial Class Chat
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(687, 467)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Panel5)
+        Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Label3)
@@ -380,6 +637,10 @@ Partial Class Chat
         Me.Panel2.ResumeLayout(False)
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
+        Me.Panel5.ResumeLayout(False)
+        Me.Panel5.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -416,4 +677,27 @@ Partial Class Chat
     Friend WithEvents Button11 As System.Windows.Forms.Button
     Friend WithEvents Timer5 As System.Windows.Forms.Timer
     Friend WithEvents Timer6 As System.Windows.Forms.Timer
+    Friend WithEvents Panel4 As System.Windows.Forms.Panel
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents Button21 As System.Windows.Forms.Button
+    Friend WithEvents Button20 As System.Windows.Forms.Button
+    Friend WithEvents Button19 As System.Windows.Forms.Button
+    Friend WithEvents Button18 As System.Windows.Forms.Button
+    Friend WithEvents Button17 As System.Windows.Forms.Button
+    Friend WithEvents Button16 As System.Windows.Forms.Button
+    Friend WithEvents Button15 As System.Windows.Forms.Button
+    Friend WithEvents Button14 As System.Windows.Forms.Button
+    Friend WithEvents Button12 As System.Windows.Forms.Button
+    Friend WithEvents Panel5 As System.Windows.Forms.Panel
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Button23 As System.Windows.Forms.Button
+    Friend WithEvents Button22 As System.Windows.Forms.Button
+    Friend WithEvents Button24 As System.Windows.Forms.Button
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents Label10 As System.Windows.Forms.Label
+    Friend WithEvents Label9 As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
 End Class
