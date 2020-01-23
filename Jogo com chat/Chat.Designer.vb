@@ -56,6 +56,14 @@ Partial Class Chat
         Me.Timer5 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer6 = New System.Windows.Forms.Timer(Me.components)
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Button24 = New System.Windows.Forms.Button()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Button21 = New System.Windows.Forms.Button()
         Me.Button20 = New System.Windows.Forms.Button()
@@ -70,14 +78,7 @@ Partial Class Chat
         Me.Button23 = New System.Windows.Forms.Button()
         Me.Button22 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Button24 = New System.Windows.Forms.Button()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
+        Me.conectado = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,7 +108,7 @@ Partial Class Chat
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TextBox2.Location = New System.Drawing.Point(59, 67)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(574, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(583, 20)
         Me.TextBox2.TabIndex = 1
         '
         'Button1
@@ -133,9 +134,9 @@ Partial Class Chat
         Me.Panel1.Controls.Add(Me.Button1)
         Me.Panel1.Controls.Add(Me.TextBox1)
         Me.Panel1.Controls.Add(Me.TextBox2)
-        Me.Panel1.Location = New System.Drawing.Point(12, 367)
+        Me.Panel1.Location = New System.Drawing.Point(3, 367)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(668, 112)
+        Me.Panel1.Size = New System.Drawing.Size(677, 112)
         Me.Panel1.TabIndex = 3
         Me.Panel1.Visible = False
         '
@@ -147,7 +148,7 @@ Partial Class Chat
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(50, 23)
         Me.Button9.TabIndex = 5
-        Me.Button9.Text = "mudar imagem"
+        Me.Button9.Text = "Extra"
         Me.Button9.UseVisualStyleBackColor = False
         '
         'Button2
@@ -203,7 +204,7 @@ Partial Class Chat
         '
         Me.Button4.BackColor = System.Drawing.Color.Transparent
         Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Location = New System.Drawing.Point(12, 26)
+        Me.Button4.Location = New System.Drawing.Point(3, 4)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(75, 23)
         Me.Button4.TabIndex = 7
@@ -236,7 +237,7 @@ Partial Class Chat
         '
         Me.Button6.BackColor = System.Drawing.Color.Transparent
         Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.Location = New System.Drawing.Point(49, 86)
+        Me.Button6.Location = New System.Drawing.Point(49, 48)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(109, 23)
         Me.Button6.TabIndex = 1
@@ -247,7 +248,7 @@ Partial Class Chat
         '
         Me.Button5.BackColor = System.Drawing.Color.Transparent
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button5.Location = New System.Drawing.Point(66, 37)
+        Me.Button5.Location = New System.Drawing.Point(66, 86)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(75, 23)
         Me.Button5.TabIndex = 0
@@ -297,7 +298,7 @@ Partial Class Chat
         'PictureBox3
         '
         Me.PictureBox3.Image = Global.Jogo_com_chat.My.Resources.Resources._443e76a793cd3ad46eefc326a1942ec0_w200
-        Me.PictureBox3.Location = New System.Drawing.Point(264, 46)
+        Me.PictureBox3.Location = New System.Drawing.Point(241, 46)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(218, 258)
         Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -312,9 +313,13 @@ Partial Class Chat
         'Button8
         '
         Me.Button8.BackColor = System.Drawing.Color.White
+        Me.Button8.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button8.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
+        Me.Button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.Button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button8.ForeColor = System.Drawing.Color.Black
-        Me.Button8.Location = New System.Drawing.Point(605, 12)
+        Me.Button8.Location = New System.Drawing.Point(605, 4)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(75, 23)
         Me.Button8.TabIndex = 14
@@ -346,6 +351,10 @@ Partial Class Chat
         'Button11
         '
         Me.Button11.BackColor = System.Drawing.Color.Transparent
+        Me.Button11.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button11.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
+        Me.Button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.Button11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button11.Location = New System.Drawing.Point(14, 43)
         Me.Button11.Name = "Button11"
@@ -357,6 +366,10 @@ Partial Class Chat
         'Button10
         '
         Me.Button10.BackColor = System.Drawing.Color.Transparent
+        Me.Button10.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button10.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
+        Me.Button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.Button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button10.Location = New System.Drawing.Point(14, 13)
         Me.Button10.Name = "Button10"
@@ -400,6 +413,78 @@ Partial Class Chat
         Me.Panel4.Size = New System.Drawing.Size(171, 145)
         Me.Panel4.TabIndex = 17
         Me.Panel4.Visible = False
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(119, 86)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(36, 13)
+        Me.Label12.TabIndex = 16
+        Me.Label12.Text = "Amigo"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(119, 48)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(32, 13)
+        Me.Label11.TabIndex = 15
+        Me.Label11.Text = "Você"
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(105, 27)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(59, 13)
+        Me.Label10.TabIndex = 14
+        Me.Label10.Text = "Pontuação"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(125, 106)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(19, 13)
+        Me.Label9.TabIndex = 13
+        Me.Label9.Text = "00"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(125, 66)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(19, 13)
+        Me.Label8.TabIndex = 12
+        Me.Label8.Text = "00"
+        '
+        'Button24
+        '
+        Me.Button24.BackColor = System.Drawing.Color.Red
+        Me.Button24.Location = New System.Drawing.Point(151, 3)
+        Me.Button24.Name = "Button24"
+        Me.Button24.Size = New System.Drawing.Size(17, 16)
+        Me.Button24.TabIndex = 7
+        Me.Button24.Text = "X"
+        Me.Button24.UseVisualStyleBackColor = False
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(31, 27)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(39, 13)
+        Me.Label7.TabIndex = 11
+        Me.Label7.Text = "Label7"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(31, 24)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(0, 13)
+        Me.Label6.TabIndex = 10
         '
         'Label4
         '
@@ -505,8 +590,12 @@ Partial Class Chat
         'Button23
         '
         Me.Button23.BackColor = System.Drawing.Color.Transparent
+        Me.Button23.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button23.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
+        Me.Button23.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.Button23.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button23.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button23.Location = New System.Drawing.Point(16, 61)
+        Me.Button23.Location = New System.Drawing.Point(21, 61)
         Me.Button23.Name = "Button23"
         Me.Button23.Size = New System.Drawing.Size(76, 24)
         Me.Button23.TabIndex = 8
@@ -516,8 +605,12 @@ Partial Class Chat
         'Button22
         '
         Me.Button22.BackColor = System.Drawing.Color.Transparent
+        Me.Button22.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button22.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent
+        Me.Button22.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent
+        Me.Button22.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent
         Me.Button22.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button22.Location = New System.Drawing.Point(26, 31)
+        Me.Button22.Location = New System.Drawing.Point(31, 31)
         Me.Button22.Name = "Button22"
         Me.Button22.Size = New System.Drawing.Size(57, 24)
         Me.Button22.TabIndex = 7
@@ -533,77 +626,14 @@ Partial Class Chat
         Me.Label5.TabIndex = 0
         Me.Label5.Text = "Solicitação para jogar"
         '
-        'Label6
+        'conectado
         '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(31, 24)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(0, 13)
-        Me.Label6.TabIndex = 10
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(31, 27)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(39, 13)
-        Me.Label7.TabIndex = 11
-        Me.Label7.Text = "Label7"
-        '
-        'Button24
-        '
-        Me.Button24.BackColor = System.Drawing.Color.Red
-        Me.Button24.Location = New System.Drawing.Point(151, 3)
-        Me.Button24.Name = "Button24"
-        Me.Button24.Size = New System.Drawing.Size(17, 16)
-        Me.Button24.TabIndex = 7
-        Me.Button24.Text = "X"
-        Me.Button24.UseVisualStyleBackColor = False
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(125, 66)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(19, 13)
-        Me.Label8.TabIndex = 12
-        Me.Label8.Text = "00"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(125, 106)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(19, 13)
-        Me.Label9.TabIndex = 13
-        Me.Label9.Text = "00"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(105, 27)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(59, 13)
-        Me.Label10.TabIndex = 14
-        Me.Label10.Text = "Pontuação"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(119, 48)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(32, 13)
-        Me.Label11.TabIndex = 15
-        Me.Label11.Text = "Você"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(119, 86)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(36, 13)
-        Me.Label12.TabIndex = 16
-        Me.Label12.Text = "Amigo"
+        Me.conectado.AutoSize = True
+        Me.conectado.Location = New System.Drawing.Point(630, 9)
+        Me.conectado.Name = "conectado"
+        Me.conectado.Size = New System.Drawing.Size(45, 13)
+        Me.conectado.TabIndex = 19
+        Me.conectado.Text = "Label13"
         '
         'Chat
         '
@@ -612,13 +642,14 @@ Partial Class Chat
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(687, 467)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button8)
+        Me.Controls.Add(Me.conectado)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.ProgressBar1)
         Me.Controls.Add(Me.PictureBox3)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.Button8)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -629,6 +660,7 @@ Partial Class Chat
         Me.Controls.Add(Me.PictureBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Name = "Chat"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Chat"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
@@ -700,4 +732,5 @@ Partial Class Chat
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents conectado As System.Windows.Forms.Label
 End Class

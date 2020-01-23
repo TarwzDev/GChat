@@ -26,8 +26,8 @@ Public Class Chat
         fluxoli.Close()
 
         'aqui é o que muda a imagem do fundo
-        If IO.File.Exists("C:\temp\TempG\profile\imdfundo.txt") Then
-            fluxotexto = New IO.StreamReader("C:\temp\TempG\profile\imdfundo.txt")
+        If IO.File.Exists("C:\Temp\TempG\conf\imdfundo.txt") Then
+            fluxotexto = New IO.StreamReader("C:\Temp\TempG\conf\imdfundo.txt")
             linhatexto = fluxotexto.ReadLine
             PictureBox1.ImageLocation = linhatexto
             fluxotexto.Close()
@@ -78,7 +78,7 @@ Public Class Chat
                 msn &= Convert.ToChar(tr.Read()).ToString
                 k7 = msn
             End While
-            If k7.Contains("?Rejeitado?") = True Or k7.Contains("?aceito?") Or k7.Contains("?fui?") = True Or k7.Contains("?ativarnotjv?") = True Or k7.Contains("?closejv?") = True Or k7.Contains("B1") = True Or k7.Contains("B2") = True Or k7.Contains("B3") = True Or k7.Contains("B4") = True Or k7.Contains("B5") = True Or k7.Contains("B6") = True Or k7.Contains("B7") = True Or k7.Contains("B8") = True Or k7.Contains("B9") = True Then
+            If k7.Contains(":help") = True Or k7.Contains("?Rejeitado?") = True Or k7.Contains("?aceito?") Or k7.Contains("?fui?") = True Or k7.Contains("?ativarnotjv?") = True Or k7.Contains("?closejv?") = True Or k7.Contains("B1") = True Or k7.Contains("B2") = True Or k7.Contains("B3") = True Or k7.Contains("B4") = True Or k7.Contains("B5") = True Or k7.Contains("B6") = True Or k7.Contains("B7") = True Or k7.Contains("B8") = True Or k7.Contains("B9") = True Then
             Else
                 TextBox1.AppendText(msn + vbNewLine)
                 msn = ""
@@ -107,15 +107,16 @@ Public Class Chat
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Dim ope As New OpenFileDialog
-
+        ope.Filter = "Images |*.jpg; *.jpeg; *.png"
         If ope.ShowDialog = Windows.Forms.DialogResult.OK Then
             PictureBox1.ImageLocation = ope.FileName
 
-            Dim path As String = "c:\temp\TempG\profile\imdfundo.txt"
+            Dim path As String = "C:\Temp\TempG\conf\imdfundo.txt"
             Dim context As FileStream = File.Create(path)
             Dim info As Byte() = New UTF8Encoding(True).GetBytes(ope.FileName)
             context.Write(info, 0, info.Length)
             context.Close()
+            Panel2.Visible = False
 
         End If
     End Sub
@@ -141,7 +142,7 @@ Public Class Chat
 
         If e.KeyCode = 13 And TextBox2.Text <> "" Then
             cliente = New TcpClient(ipamigo, 6060)
-            If TextBox2.Text.Contains(":help") Or TextBox2.Text.Contains(":desligar") Or TextBox2.Text.Contains(":booo") Or TextBox2.Text.Contains(":matrix") Or TextBox2.Text.Contains(":whatsapp") Then
+            If TextBox2.Text.Contains(":desligar") Or TextBox2.Text.Contains(":booo") Or TextBox2.Text.Contains(":matrix") Or TextBox2.Text.Contains(":whatsapp") Then
                 TextBox1.AppendText((ven & TextBox2.Text & "   ") + vbNewLine)
                 Dim sw As New StreamWriter(cliente.GetStream())
                 sw.Write(env & nome & " o comando  " & TextBox2.Text & "   ")
@@ -193,6 +194,12 @@ Public Class Chat
     'aqui é a parte dos comandos kkkk
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        If ipamigo = meuip Then
+            conectado.Text = "Solitário"
+        ElseIf ipamigo <> meuip Then
+            conectado.Text = "Conectado"
+        End If
+
         If k7.Contains(":desligar") = True Then
             msn = ""
             k7 = ""
@@ -345,7 +352,7 @@ Public Class Chat
                 Panel4.Visible = False
                 MsgBox("Seu amigo fechou o jogo ;-;", MsgBoxStyle.OkOnly)
             End If
-    
+
         End If
 
 
@@ -371,8 +378,9 @@ Public Class Chat
     Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
 
         If meuip = ipamigo Then
-           
+            Panel3.Visible = False
             MsgBox("Você esta usando o mesmo ip")
+
         ElseIf meuip <> ipamigo Then
             Panel5.Location = New Point(77, 37)
             cliente = New TcpClient(ipamigo, 6060)
@@ -552,5 +560,9 @@ Public Class Chat
         Dim sw As New StreamWriter(cliente.GetStream())
         sw.Write("?closejv?")
         sw.Flush()
+    End Sub
+
+    Private Sub Button11_Click(sender As Object, e As EventArgs) Handles Button11.Click
+        MsgBox("Em breve kkkk", MsgBoxStyle.OkOnly)
     End Sub
 End Class
